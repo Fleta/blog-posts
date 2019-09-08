@@ -1,4 +1,4 @@
-이번에 AWS lightsail + Route53, ghost 로 블로그를 새로 만들게 되었습니다. 블로그를 세팅하는 과정에 대해 기록한다.
+이번에 AWS lightsail + Route53, ghost 로 블로그를 새로 만들게 되었다. 블로그를 세팅하는 과정에 대해 기록한다.
 
 ## 1. Amazon lightsail
 
@@ -51,7 +51,7 @@ LANG=en_US.utf-8
 LC_ALL=en_US.utf-8
 ```
 
-저렴한 인스턴스를 쓰다 보니 메모리가 낮은 편이다. Ghost는 권장 사양으로 1G의 메모리를 요구하므로, Swap 설정이 필요하다. (저는 Swap을 2G로 세팅했습니다.)
+저렴한 인스턴스를 쓰다 보니 메모리가 낮은 편이다. Ghost는 권장 사양으로 1G의 메모리를 요구하므로, Swap 설정이 필요하다.
 
 ```
 sudo fallocate -l 2G /swapfile
@@ -69,7 +69,7 @@ sudo usermod -aG sudo [username]
 su - [username]
 ```
 
-apt를 사용하기 전 업데이트를 하고 필수 패키지들을 세팅한다. (있는 경우가 많습지만 저는 메모해두고 습관처럼 실행합니다..)
+apt를 사용하기 전 업데이트를 하고 필수 패키지들을 세팅한다. 
 ```
 sudo apt update && sudo apt install build-essential libssl-dev curl
 ```
