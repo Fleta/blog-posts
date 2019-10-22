@@ -1,3 +1,20 @@
+지난 글에서 다루지 않았던 블로그를 올리면서 했던 다른 설정들을 이번 글에서 다루고자 한다. 
+
+Nginx 설정
+
+블로그의 주소는 현재 `blog.yuigahama.moe`인데, 메인 도메인인 `yuigahama.moe`에도 다른 웹 서비스가 올라가 있다. ghost로 블로그를 올리면서 SSL를 사용하도록 설정했다면 생성된 ghost 폴더의 하위 경로에서 nginx 설정을 발견할 수 있다. 특별히 경로를 바꾸지 않았다면 `/system/files/${blog_domain}.conf` 파일이 그 파일이다. `location` 블록 설정은 되어 있겠지만 블로그만 먼저 세팅하고 ssl 인증서를 받은 경우 ssl_certificate 관련 설정이 안 되어있을 것이다.
+
+```
+    ssl_certificate /etc/letsencrypt/live/${blog_domain}/fullchain.pem; 
+    ssl_certificate_key /etc/letsencrypt/live/${blog_domain}/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf; 
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; 
+```
+
+이런 설정이 있는지 확인해보자.
+
+
+
 폰트 변경
 
 - 사용하는 스킨은 attila 스킨임. https://github.com/zutrinken/attila
