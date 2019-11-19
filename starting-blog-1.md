@@ -1,3 +1,10 @@
+---
+title: 'Amazon (Lightsail + Route53) + Ghost로 개인 블로그 만들기 - 1'
+date: 2019-9-5 02:00:00
+category: 'Tech'
+---
+
+
 이번에 AWS lightsail + Route53, ghost 로 블로그를 새로 만들게 되었다. 블로그를 세팅하는 과정에 대해 기록한다.
 
 ## 1. Amazon lightsail

@@ -1,3 +1,11 @@
+---
+title: 'Amazon (Lightsail + Route53) + Ghost로 개인 블로그 만들기 - 2'
+date: 2019-9-6 02:00:00
+category: 'Tech'
+---
+
+
+
 지난 글에서 다루지 않았던 블로그를 올리면서 했던 다른 설정들을 이번 글에서 다루고자 한다. 
 
 1. SSL 설정
@@ -73,7 +81,7 @@ server {
 
 attila 테마 같은 경우는 외국에서 만든 폰트여서 그런지 post의 body 기본 font-family가 'Cardo', sans-serif로 되어있는데 둘 다 한글폰트가 매우 별로다. 하나는 한글 폰트가 지원되지 않아 기본 폰트처럼 나오고 sans-serif는... (이하 생략) 또한 css에 `word-break: keep-all` 이 적용이 안 되어 있는데 개인적으로 되게 싫어해서 이것도 수정하였다. 아래의 사진은 이해를 돕기 위해 당시 모습을 대략적으로 나타낸 사진이다.
 
-![pic1](../static/start-blog-2-pic-1.png)
+![pic1](/images/start-blog-2-pic-1.png)
 
 대략 한 일을 설명하자면, attila의 경우 `/assets/css/font` 에 폰트 파일을 두고 font-face 정의는 `/src/sass/_fonts.scss`에서 하고 있다. 기존에 사용되던 폰트들은 svg, ttf, woff, woff2 의 다양한 파일들로 font-face를 정의하고 있지만 나는 성의가 없어서 그런지 truetype(ttf) 만 넣고 font-face도 마찬가지로 truetype의 normal, italic에 대해서만 정의했다. 
 
@@ -81,4 +89,4 @@ attila 테마 같은 경우는 외국에서 만든 폰트여서 그런지 post�
 
 결과는 아래처럼..
 
-![pic2](../static/start-blog-2-pic-2.png)
+![pic2](/images/start-blog-2-pic-2.png)
