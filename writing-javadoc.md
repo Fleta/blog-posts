@@ -1,6 +1,6 @@
 ---
 title: 'Javadoc 작성기'
-date: 2019-9-5 02:00:00
+date: 2019-12-16 01:00:00
 category: 'Java'
 ---
 
@@ -52,6 +52,7 @@ public SomeClass someMethod(SomeOhterClass parameter) {
 }
 ```
 
+
 ## 3. 조그마한 이슈들
 
 ### 3-1. 커스텀 태그
@@ -70,3 +71,14 @@ Spark나 Javalin같은 웹 프레임워크들을 사용할 때는 엔드포인�
 - f (필드)
 
 ### 3-2. 인코딩
+
+보통 Javadoc을 만들 정도의 프로젝트는 사내 프로덕트이고, 보통의 한국 회사라면 구성원들은 대부분 한국어가 모국어이기 때문에 아무리 소스코드와 함께 작성한다지만 한국어로 Javadoc을 적는 경우가 다수이다. Javadoc의 경우 한국어로 적으면 생성이 제대로 안 될 수 있다. `unmappable character for encoding ASCII` 같은 오류와 함께 생성이 실패하게 되는데, 이럴 경우 `locale`, `charset`, `encoding`, `docencoding` 옵션으로 한국어의 경우 UTF-8을 사용하도록 하면 된다. 
+
+```
+-locale ko_KR -charset UTF-8 -encoding UTF-8 -docencoding UTF-8
+```
+
+
+## 4. 마무리
+
+솔직히 말해서 요즘은 내가 가지고있는 소스코드, 빌드 자동화 툴(e.g. gradle) 등을 통해 받은 라이브러리 둘 다 IDE를 통하면 Javadoc을 충분히 볼 수 있다. 코딩을 하는 과정에서 설명이 필요한 메서드 등이 있으면 단축키를 통해 바로 이동할 수 있어서 이동한 지점에 있는 Javadoc 소스를 보면 된다. 또한 하나의 인터페이스에서 제공하는 메서드들의 목록을 볼 때도 쉽게 볼 수 있다. IntelliJ 같은 경우는 인터페이스 이름을 입력하고 `.` 을 누르면 드롭다운(?) 같은 리스트로 지원하는 함수 목록이 나열될 정도로 편리한 기능을 제공하고 있어서 Javadoc의 필요성이 많이 떨어졌을 수 있다. 그러나 여전히 Javadoc은 비교적 쉽게 소스에 대한 설명을 볼 수 있는 유용한 도구이니 필요한 경우 적극적으로 사용할 수 있을 것 같다고 생각한다.
