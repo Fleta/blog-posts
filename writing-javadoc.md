@@ -36,12 +36,13 @@ category: 'Java'
 ```
 /**
  * This controls certian functions.
- * Parameter argument should satisfy certain contains. See {@link SomeClass#someInterface}
+ * Parameter argument should satisfy certain contains. 
  * <p>
- * Other paragraphs can also be made.
+ * Other paragraphs can also be made. 
  *
  * @param   parameter   object giving something of something
  * @return              object of the result processed by the given parameter
+ * @see     {@link SomeClass#someMethod}
 */
 
 
@@ -51,8 +52,21 @@ public SomeClass someMethod(SomeOhterClass parameter) {
 }
 ```
 
-## 3. 내가 마주했던 문제들
+## 3. 조그마한 이슈들
 
 ### 3-1. 커스텀 태그
+
+Spark나 Javalin같은 웹 프레임워크들을 사용할 때는 엔드포인트들을 구현하게 된다. 예를 들면 (GET)`/api/message/send` 엔드포인트의 요청을 받아서 처리하는 엔드포인트를 `messageSend` 라는 변수로 구현했을 때 `messageSend` 라는 변수의 설명을 달아야 하는데, 이 변수는 엔드포인트의 구현이라는 설명을 하고 싶을 수 있다. 이럴 경우 `@Endpoint /api/message/send` 와 같은 태그를 사용하면 어떨까? 하는 생각을 할 수 있는데, `@Endpoint`는 Javadoc에서 기본적으로 제공하는 태그가 아니다. 
+
+위와 같이 커스텀 태그를 사용하고 싶으면 Javadoc을 실행할 때 옵션에 커스텀태그에 대한 명시를 해주면 된다. `-tag custom.${tag_name}:${Xaoptcmf}:"${tag_head}"` 형식으로 사용할 수 있다. 소스코드 상에서 `@tag_name` 이라고 명시하면 `tag_head` 라는 제목의 태그로 바뀌는데, `Xaoptcmf` 의 속성을 가진다는 뜻이다. `Xaoptcmf` 중 하나의 글자가 들어가는데, 각 글자가 의미하는 바는 아래와 같다.
+
+- X (태그 무효화)
+- a (모든 위치)
+- o (개요)
+- p (패키지)
+- t (형태 : 클래스 및 인터페이스)
+- c (생성자)
+- m (메서드)
+- f (필드)
 
 ### 3-2. 인코딩
